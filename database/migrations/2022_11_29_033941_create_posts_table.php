@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role');
-            $table->rememberToken();
+            $table->string('judul');
+            $table->date('tanggalDibuat');
+            $table->text('isi');
+            $table->boolean('tampilPost')->default(1);
+            $table->foreignId('category_id')->constrained()->onCascadeUpdate()->onCascadeDelete();
+            $table->foreignId('user_id')->constrained()->onCascadeUpdate()->onCascadeDelete();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('posts');
     }
 };
