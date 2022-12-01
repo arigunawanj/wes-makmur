@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center mb-3">Detail Artikel</h1>
-        <a href="/beranda" class="btn btn-warning mb-3">Kembali</a>
+        <a href="/" class="btn btn-warning mb-3">Kembali</a>
         <div class="row justify-content-center">
             <div class="card">
                 <div class="card-header">Detail Artikel dari <span class="badge bg-primary">{{ $post->judul }}</span> </div>

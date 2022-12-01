@@ -51,11 +51,7 @@ class BerandaController extends Controller
     {
         $post = Post::findorFail($id);
 
-        if($post->category_id == 1){
-            $product = Product::where('category_id', 1)->get();
-        } else {
-            $product = Product::where('category_id', 2)->get();
-        }
+        $product = Product::where('category_id', $post->category_id)->get();
 
         return view('beranda.detail', compact('post', 'product'));
     }

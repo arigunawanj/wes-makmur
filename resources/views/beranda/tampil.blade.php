@@ -14,7 +14,7 @@
                             <footer class="blockquote-footer"><cite title="Source Title">{{ $item->user->name }}</cite>
                             </footer>
                         </blockquote>
-                        <a href="{{ route('beranda.show', $item->id) }}" class="btn btn-primary">Detail</a>
+                        <a href="detail/{{ $item->id }}" class="btn btn-primary">Detail</a>
                     </div>
                 </div>
             @endforeach

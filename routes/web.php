@@ -20,12 +20,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 
 // Route Beranda
-Route::resource('beranda', BerandaController::class);
+// Route::resource('beranda', BerandaController::class);
+Route::get('/', [BerandaController::class, 'index']);
+// Route Jamu
+Route::resource('jamu', JamuController::class);
+Route::get('detail/{id}', [BerandaController::class, 'show']);
 
 Auth::routes();
 
@@ -52,8 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('post/{post}', [PostController::class, 'destroy']);
     Route::get('tampilPost/{id}', [PostController::class, 'hide']);
     
-    // Route Jamu
-    Route::resource('jamu', JamuController::class);
+    
     
 });
 

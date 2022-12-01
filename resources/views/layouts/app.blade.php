@@ -33,13 +33,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/beranda">Beranda</a>
+                            <a class="nav-link" href="/">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/jamu">Rekomendasi Jamu</a>
                         </li>
                     @guest
                     @else
-                    <li class="nav-item">
-                            <a class="nav-link" href="/jamu">Rekomendasi Jamu</a>
-                        </li>
                         @if (Auth::user()->role == "Admin")
                         <li class="nav-item">
                             <a class="nav-link" href="/user">Data Pengguna</a>
